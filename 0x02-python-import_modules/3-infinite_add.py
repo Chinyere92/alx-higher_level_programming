@@ -10,5 +10,3 @@ if __name__ == "__main__":
 
         total += int(argv[1 + x])
     print(total)
-
-
