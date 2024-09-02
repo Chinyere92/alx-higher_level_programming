@@ -2,9 +2,9 @@
 
 def no_c(my_string):
 
-    strn = []
+    my_copy = []
 
     for x in my_string:
         if x not in "Cc":
-            strn.append(x)
-    return " ".join(strn)
+            my_copy.append(x)
+    return "".join(my_copy)
