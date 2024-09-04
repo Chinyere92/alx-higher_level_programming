@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Module with square class
+"""
+
+
 class Square:
     """
     Declaration:
