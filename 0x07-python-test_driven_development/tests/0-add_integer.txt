@@ -1,0 +1,52 @@
+=======================================
+Module to add two integers or floats.==
+=======================================
+
+Adds two integers or floats.
+
+Args:
+     a (int, float): The first number.
+     b (int, float, optional): The second number. Defaults to 98.
+
+Raises:
+     TypeError: If either of the arguments is not an integer or float.
+
+Returns:
+     int: The sum of the two numbers, converted to an integer.
+
+
+Examples:
+        
+        >>> add_integer(1, 2)
+        3
+        
+        >>> add_integer(1.5, 2.5)
+        4
+        
+        >>> add_integer(1, 2.5)
+        3
+        
+        >>> add_integer(1.5, 2)
+        3
+        
+        >>> add_integer(1)
+        99
+        
+        >>> add_integer(1.9)
+        99
+        
+        >>> add_integer(-1, -2)
+        -3
+        
+        >>> add_integer(-1.5, 2)
+        0
+        
+        >>> add_integer(1, '2')
+        Traceback (most recent call last):
+            ...
+        TypeError: b must be an integer
+        
+        >>> add_integer('1', 2)
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
