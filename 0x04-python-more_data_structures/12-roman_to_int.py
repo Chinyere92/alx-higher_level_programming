@@ -1,24 +1,22 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-
-    rmn = 0
-
     if roman_string is None or not isinstance(roman_string, str):
-        return rmn
+        return 0
 
     roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    prev = roman_string[0]
+    rmn = 0
+    prev_value = 0
 
     for curr in roman_string:
+        curr_value = roman[curr]
 
-        if roman[curr] == roman[prev]:
-            rmn += roman[curr]
-            prev = curr
-        elif roman[curr] > roman[prev]:
-            rmn = (roman[curr] - rmn) - 2
-            prev = curr
+        if curr_value > prev_value:
+            rmn += curr_value - 2 * prev_value
         else:
-            rmn += roman[curr]
-            prev = curr
+            rmn += curr_value
+
+        # Update previous numeral value
+        prev_value = curr_value
+
     return rmn
