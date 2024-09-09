@@ -1,7 +1,21 @@
 #!/usr/bin/python3
 
+# finding the best heghest value in dicts key
 def best_score(a_dictionary):
 
-    if a_dictionary is None:
+    value = 0
+    key = ""
+
+    # check if a_dictionary is Empty
+    if a_dictionary is None or len(a_dictionary) == 0:
         return None
-    return max(a_dictionary)
+
+    # Loop through dicts to obtain key and value
+    for k, v in a_dictionary.items():
+        if v > value:
+            value = v
+            key = k
+        elif v == value:
+            value = 0
+            key = ""
+    return key
