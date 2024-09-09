@@ -18,5 +18,5 @@ def roman_to_int(roman_string):
         elif roman[curr] > roman[prev]:
             rmn = (roman[curr] - rmn)
         else:
-            rmn += roman[curr]
+            rmn += roman[curr] - 2
     return rmn
