@@ -97,3 +97,10 @@ class Rectangle(Base):
         return the area of reactangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        Method to display '#' in Rectangle
+        """
+        for i in range(self.__height):
+            print('#' * self.__width)
