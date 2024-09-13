@@ -100,9 +100,16 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Method to display '#' in Rectangle
+        Prints the rectangle using the character '#',
+        taking into account the 'x' and 'y' offsets 
+        for horizontal and vertical positioning.
         """
-        for i in range(self.__height):
+        print("\n" * self.__y, end='')
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
+
+        for _ in range(self.__height):
+
             print('#' * self.__width)
 
     def __str__(self):
