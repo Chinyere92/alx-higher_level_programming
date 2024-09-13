@@ -116,22 +116,25 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Assigns the arguments to the attributes:
-        - 1st argument -> id
-        - 2nd argument -> width
-        - 3rd argument -> height
-        - 4th argument -> x
-        - 5th argument -> y
+        Assigns an argument to each attribute via *args or **kwargs:
+            - *args (if not empty):
+                - 1st argument -> id
+                - 2nd argument -> width
+                - 3rd argument -> height
+                - 4th argument -> x
+                - 5th argument -> y
+            - **kwargs (if *args is empty):
+                Each key in the dictionary is used to
+                assign to the corresponding attribute
         """
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+    if args:
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], arg)
+    else:
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
